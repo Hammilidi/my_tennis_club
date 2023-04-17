@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="{% static 'myfirst.css' %}">
+<body>
+
+{% for x in fruits %}
+  <h1>{{ x }}</h1>
+{% endfor %}
+
+<h1>Hello {{ firstname }}, how are you?</h1>
+
+{% with firstname_="Tobias" %}
+<h1>Hello {{ firstname_ }}, how are you?</h1>
+{% endwith %}
+
+{% if greeting == 1 %}
+  <h1>Hello</h1>
+{% elif greeting == 2 %}
+  <h1>Welcome</h1>
+{% endif %} 
+
+<ul>
+  {% for x in mymembers %}
+    <li>{{ x.firstname }}</li>
+  {% endfor %}
+</ul>
+
+
+
+</body>
+</html>
